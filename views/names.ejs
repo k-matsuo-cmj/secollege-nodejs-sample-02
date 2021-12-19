@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EJSで表示するサンプル</title>
+    <link rel='stylesheet' href='/stylesheets/ejs.css' />
+  </head>
+  <body>
+    <h1>EJSで表示するサンプル</h1>
+    <% names.forEach(function(row){ %>
+      <div class="nameItem">
+        <%= row.name %> : <%= row.address %>
+      </div>
+    <% }) %>
+  </body>
+</html>

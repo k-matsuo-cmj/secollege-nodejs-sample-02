@@ -86,4 +86,13 @@ router.get('/upd02', async (req, res) => {
   res.json(names);
 });
 
+// ejsにprismaで取得したデータを表示
+router.get('/ejs', async (req, res) => {
+  const prisma = new PrismaClient();
+  const allNames = await prisma.names.findMany();
+
+  // ejsに表示
+  res.render('names', { names: allNames });
+});
+
 module.exports = router;
